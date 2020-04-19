@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const { sequelize } = require('../../core/db')
-const { ParameterException } = require('../../core/http-exception')
+const { ParameterException, NotFound } = require('../../core/http-exception')
 
 class User extends Model {
     static async validatorUser(id) {
