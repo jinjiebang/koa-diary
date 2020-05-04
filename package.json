@@ -14,7 +14,7 @@
     "validator": "^10.11.0"
   },
   "scripts": {
-    "start": "nodemon --inspect-brk",
+    "start": "nodemon app.js",
     "start:prod": "node app.js"
   },
   "dependencies": {

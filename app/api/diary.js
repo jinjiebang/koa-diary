@@ -48,6 +48,9 @@ router.get('/:id', async ctx => {
 router.get('/', GetDiaryValidator, async ctx => {
     const { start = 0, count = 10 } = ctx.request.query
     const diarys = await Diary.getAllDiary(start, count)
+    diarys.forEach(diary=>{
+        diary.setDataValue('create_time', formatDate(diary.create_time))
+    })
     ctx.body = diarys
 })
 

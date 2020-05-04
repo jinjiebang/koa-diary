@@ -1,7 +1,7 @@
 module.exports = {
     environment: 'dev',
     database: {
-        dbName: 'remind',
+        dbName: 'diary',
         host: 'localhost',
         port: 3306,
         user: 'root',
