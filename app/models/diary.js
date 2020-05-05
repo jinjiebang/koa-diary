@@ -5,11 +5,11 @@ const { Favor } = require('../models/favor')
 const { formatDate } = require('../lib/helper')
 
 class Diary extends Model {
-    static async getUserDiary(id, start = 0, count = 10) {
-        await User.validatorUser(id)
+    static async getUserDiary(uid, start = 0, count = 10) {
+        await User.validatorUser(uid)
         const favors = await Favor.findAll({
             where: {
-                uid: id
+                uid
             }
         })
         const favorDiaryIds = favors.map(f => {

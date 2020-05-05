@@ -16,12 +16,14 @@ const catchError = async (ctx, next) => {
                 errorCode: error.errorCode,
                 requestUrl: `${ctx.method} ${ctx.path}`
             }
+            ctx.status = error.code
         } else {
             ctx.body = {
                 message:'服务器发生了点问题',
                 errorCode: '9999',
                 requestUrl: `${ctx.method} ${ctx.path}`
             }
+            ctx.status = 500
         }
     }
 }
